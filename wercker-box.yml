@@ -8,6 +8,7 @@ keywords:
   - ruby
 script: |
   export RUBY_VERSION=2.1.1
+  export BUNDLER_VERSION=1.5.2
 
   # ruby
   sudo apt-get remove ruby1.9.1
@@ -32,3 +33,4 @@ script: |
 
 env:
   RUBY_VERSION: "2.1.1"
+  BUNDLER_VERSION: "1.5.2"
