@@ -1,16 +1,8 @@
 name: iori
 version: 0.0.1
-inherits: wercker/ubuntu12.04-ruby2.0.0@0.3.0
+inherits: wercker/ubuntu12.04-webessentials@1.0.0
 type: main
 platform: ubuntu@12.04
 description: Box for Wercker to build packages of iori.
 keywords:
   - ruby
-script: |
-  sudo apt-get update
-
-  ruby -v
-  rvm get latest
-  rvm reload
-  rvm version
-  rvm list known
