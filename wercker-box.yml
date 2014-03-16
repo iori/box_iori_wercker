@@ -8,7 +8,6 @@ keywords:
   - ruby
 script: |
   sudo apt-get update
-  sudo apt-get upgrade
 
   # rbenv
   ruby -v
