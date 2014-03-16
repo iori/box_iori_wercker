@@ -9,7 +9,6 @@ keywords:
 script: |
   sudo apt-get update
 
-  # rbenv
   ruby -v
   rvm get latest
   rvm reload
