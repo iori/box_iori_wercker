@@ -1,14 +1,22 @@
 name: iori
-version: 0.0.2
+version: 0.0.3
 inherits: wercker/ubuntu12.04-webessentials@1.0.0
 type: main
 platform: ubuntu@12.04
 description: Box for Wercker to build packages of iori.
+packages:
+  - imagemagick@latest
 keywords:
-  - ruby
+  - ruby2.1.1
+  - imagemagick
 script: |
   export RUBY_VERSION=2.1.1
   export BUNDLER_VERSION=1.5.2
+
+  sudo apt-get update
+
+  # imagemagick
+  sudo apt-get install -y imagemagick
 
   # ruby
   sudo apt-get remove ruby1.9.1
@@ -27,7 +35,6 @@ script: |
   echo "gem: --no-rdoc --no-ri" >> $HOME/.gemrc
   echo "RAILS_ENV=test" | sudo tee -a /etc/environment
   echo "RACK_ENV=test" | sudo tee -a /etc/environment
-  ruby -v
   # bundler 1.5 pre
   sudo gem install bundler --pre -v $BUNDLER_VERSION
 
