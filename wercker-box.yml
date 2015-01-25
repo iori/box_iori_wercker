@@ -1,5 +1,5 @@
 name: iori
-version: 0.0.4
+version: 0.1.0
 inherits: wercker/ubuntu12.04-webessentials@1.0.0
 type: main
 platform: ubuntu@12.04
@@ -7,14 +7,14 @@ description: Box for Wercker to build packages of iori.
 packages:
   - imagemagick@latest
 keywords:
-  - ruby2.1.3
+  - ruby2.2.0
   - imagemagick
   - redis-server
   - openjdk-7-jdk
   - libreadline6
   - libreadline-dev
 script: |
-  export RUBY_VERSION=2.1.3
+  export RUBY_VERSION=2.2.0
   export BUNDLER_VERSION=1.7.3
 
   sudo apt-get update
@@ -31,7 +31,7 @@ script: |
   cd $HOME
   mkdir rubyinstall
   cd rubyinstall
-  wget ftp://ftp.ruby-lang.org/pub/ruby/2.1/ruby-$RUBY_VERSION.tar.gz
+  wget ftp://ftp.ruby-lang.org/pub/ruby/2.2/ruby-$RUBY_VERSION.tar.gz
   tar xzvf ruby-$RUBY_VERSION.tar.gz
   cd ruby-$RUBY_VERSION
   ./configure --with-readline-dir=/usr/include/readline --with-openssl-dir=/usr/include/openssl
@@ -47,5 +47,5 @@ script: |
   sudo gem install bundler --pre -v $BUNDLER_VERSION
 
 env:
-  RUBY_VERSION: "2.1.3"
+  RUBY_VERSION: "2.2.0"
   BUNDLER_VERSION: "1.7.3"
